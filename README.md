@@ -1,13 +1,13 @@
 
 
-### Projeto Student_Perfomance Kaggle
+# 1.Projeto Student_Perfomance Kaggle
 
-## Introdução
+## 1.1 Introdução
 
 Neste projeto, o objetivo era realizar a análise de dados das estudantes e como as variáveis se comportavam entre si. Inicialmente, foi feita a visualização e análise utilizando Python. Posteriormente, também foi realizada uma análise e visualização utilizando a ferramenta Power BI, com o propósito de estudo e demonstração das minhas habilidades na sua utilização.
 O Dataset se encontra no kaggle no site [Kaggle](https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression) e no meu Github.
 
-## Sobre o Dataset
+### 1.1.1 Sobre o Dataset
 
 O Dataset desse estudo consiste de 10000 linhas e 6 colunas, sendo cada linha 1 estudante diferente e as colunas indicando as 6 váriaveis sendo elas: 
 - Variaveis e seus tipos
@@ -19,7 +19,7 @@ O Dataset desse estudo consiste de 10000 linhas e 6 colunas, sendo cada linha 1 
     - Performance Index - Float             
 
 
-## Explicando o código e Visualização
+## 1.2 Explicando o código e Visualização
 1.  Primeiramente, no código Python, realizei a verificação de valores nulos no conjunto de dados. Em seguida, converti a variável 'Extracurricular Activities' para um formato numérico, a fim de facilitar sua manipulação.
 
 2. Elaborei uma matriz de correlação para identificar quais variáveis estão principalmente relacionadas linearmente com a variável que desejo analisar, o 'Performance Index'. As variáveis 'Hours Studied' e 'Previous Score' apresentaram as maiores correlações
@@ -67,7 +67,7 @@ $$
 
     - a, c = Coeficientes Angulares
     - b = intercept
-### Machine Learning do dataset
+## 1.3 Machine Learning do dataset
 
 Dado que o dataset parece ser bastante simples, optei por utilizar apenas duas variáveis na modelagem e previsão do 'Performance Index'. Além disso, há indícios de um comportamento fortemente linear, o que me levou a empregar o algoritmo de regressão linear na biblioteca do scikit-learn.
 
@@ -116,12 +116,12 @@ $$
 <img src="imagens/7.png" alt="Fig 6">
 </center>
 
-## Conclusão
+## 1.4 Conclusão
 
 Com a utilização de um modelo de regressão linear simples, que envolve apenas duas variáveis, "Previous Score" e "Hours Studied", conseguimos realizar uma modelagem eficaz do conjunto de dados do Kaggle. Isso resultou em um baixo erro, e o modelo gerado se assemelha significativamente ao modelo original do conjunto de dados.
 
 
-# Power BI
+## 1.5 Power BI
 
 <img src="imagens/gif.gif" alt="GIF POWER BI">
 
