@@ -920,6 +920,282 @@ Quanto aos tipos de contratação mais vantajosos, destaca-se que estão nos fun
 
 
 
+# Projeto 4
+
+
+## 4.1 Introdução
+
+O conjunto de dados adquirido no Kaggle foi dividido em dois arquivos, denominados 'Train' e 'Test'. O 'Train' foi empregado durante o processo de treinamento do modelo, enquanto o 'Test' foi posteriormente utilizado para submeter dados ao Kaggle e avaliar o desempenho do modelo em relação aos demais usuários da plataforma. A pontuação obtida no Kaggle é um indicador da eficácia do modelo, permitindo comparações com outros participantes e evidenciando o quão bem o modelo se destaca na resolução do desafio proposto.
+
+Este conjunto de dados integra um desafio de machine learning no Kaggle, cujo propósito é prever 'Machine Failure'. Trata-se de um conjunto intrigante, uma vez que abrange um grande número de máquinas distintas, identificadas pelo 'Product ID'. Isso pode tornar o algoritmo consideravelmente mais lento, dependendo da abordagem do problema. Se optarmos pelo método convencional de criar uma coluna para cada máquina, isso exigirá considerável capacidade computacional. No entanto, se as máquinas não forem separadas, poderá ocorrer um erro substancial, pois cada uma é única, apresentando variáveis distintas que causam ou determinam falhas. Portanto, é crucial realizar uma segmentação adequada para obter previsões precisas.
+
+
+As variaveis do dataset são:
+
+    O dataset não possue um dicionário do que significa as variaveis: 'TWF', 'HDF', 'PWF', 'OSF', 'RNF'.
+
+- Product ID (Categorical)
+- Type - Categorical (H - M - L)
+- Air temperature [K] Numérico
+- Process temperature [K] Numérico
+- Rotational speed [rpm] - Numérico	
+- Torque [Nm] - Numérico
+- Tool wear [min] - Numérico 
+- TWF - Binario
+- HDF- Binario
+- PWF - Binario
+- OSF - Binario
+- RNF - Binario
+- Machine failure - Binario
+
+
+Dentre os modelos que empreguei para realizar a previsão, identifiquei o CatBoostClassifier como a opção mais apropriada. Este modelo demonstrou eficiência ao lidar com a complexidade decorrente das diferentes máquinas presentes no conjunto de dados, destacando-se pela sua capacidade de tratamento robusto dessas nuances sem a exigência de uma preparação prévia extensiva das colunas. A sua versatilidade em trabalhar diretamente com as características distintas das máquinas revelou-se uma vantagem significativa, contribuindo para a eficácia global do modelo.
+
+## 4.2 Visualização
+    Utilizei as bibliotecas NumPy, Seaborn, Pandas e Matplotlib para realizar a visualização do conjunto de dados. 
+
+1 Figura 
+
+A análise visual, desprovida de avaliação estatística, destaca uma disparidade significativa no gráfico de Temperatura do Ar (Air Temperature) entre as máquinas com falha (Machine failure) e aquelas sem. É perceptível um aumento acentuado nas máquinas que apresentam falha. Por outro lado, os demais gráficos exibem uma notável semelhança entre si, indicando comportamentos comparáveis nas variáveis correspondentes.
+
+
+Valores das médias:
+
+
+    Machine Failure 	 	    0 	 	         1 
+    Air temperature [K] Médio [299.85535587 300.86381182]
+
+    Machine Failure 	 	        0 	    	 1 
+    Process temperature [K] Médio [309.93966737 310.28158424]
+
+    Machine Failure 	 	         0 	    	 1 
+    Rotational speed [rpm] Médio [1522.6650387 1459.4141536]
+
+    Machine Failure 	 	 0 	 	     1 
+    Torque [Nm] Médio [40.15413312 50.15195014]
+    
+    Machine Failure 	 	 0 	 	         1 
+    Tool wear [min] Médio [104.13623543 134.43264978]
+
+
+    
+
+<p align="center">
+<img src = "machinefailure/1.png" alt="1">
+</p>
+
+2. Figura 2
+
+Ao analisar o Box Plot da 'Process Temperature' separados por falhas nas máquinas, observa-se uma tendência marcante. Fica evidente que as máquinas que apresentaram falhas exibem uma média de 'Process Temperature' consideravelmente mais elevada, conforme ilustrado pelo Box Plot. Essa disparidade na média destaca-se como um indicativo potencial de que a temperatura do processo pode desempenhar um papel na ocorrência de falhas nas máquinas.
+
+<p align="center">
+<img src = "machinefailure/2.png" alt="2">
+</p>
+
+Figura 3 
+
+Ao analisar o Box Plot da 'Air Temperature' separados por falhas nas máquinas, observa-se uma tendência marcante. Fica evidente que as máquinas que apresentaram falhas exibem uma média de 'Air Temperature' consideravelmente mais elevada, conforme ilustrado pelo Box Plot. Essa disparidade na média destaca-se como um indicativo potencial de que a temperatura do ar pode desempenhar um papel na ocorrência de falhas nas máquinas
+
+
+<p align="center">
+<img src = "machinefailure/3.png" alt="3">
+</p>
+
+Figura 4
+
+"Ao analisar o Box Plot de 'Rotational Speed' separado por falhas nas máquinas, é evidente uma tendência notável. As máquinas que apresentaram falhas exibem uma média de 'Rotational Speed' consideravelmente menor, conforme ilustrado pelo Box Plot. Essa diferença substancial na média sugere que a velocidade de rotação pode desempenhar um papel crucial na ocorrência de falhas nas máquinas, sendo notavelmente menor nos casos de falha.
+
+<p align="center">
+<img src = "machinefailure/4.png" alt="4">
+</p>
+
+Figura 5
+
+O Box Plot revela uma tendência significativa na variável 'Torque' quando analisada em relação às falhas nas máquinas. Observa-se uma diferença notável na média do 'Torque', que é consideravelmente menor nas máquinas que apresentaram falha. Essa disparidade sugere que o 'Torque' pode desempenhar um papel crucial nas ocorrências de falhas, sendo notavelmente menor nos casos em que as máquinas falharam.
+
+
+
+<p align="center">
+<img src = "machinefailure/5.png" alt="5">
+</p>
+
+
+Figura 6
+
+O Box Plot evidencia uma tendência expressiva na variável 'Tool Wear' quando considerada em relação às falhas nas máquinas. Nota-se uma diferença considerável na média de 'Tool Wear', sendo significativamente maior nas máquinas que apresentaram falha. Essa disparidade sugere que o 'Tool Wear' desempenha um papel crucial nas ocorrências de falhas, destacando-se como consideravelmente maior nos casos em que as máquinas falharam."
+
+
+<p align="center">
+<img src = "machinefailure/6.png" alt="6">
+</p>
+
+Figura 7
+
+
+O Barplot da taxa de falhas em relação ao (TWF) revela uma probabilidade de aproximadamente 100% em máquinas com TWF.
+
+<p align="center">
+<img src = "machinefailure/7.png" alt="7">
+</p>
+
+Figura 8 
+
+
+O Barplot da taxa de falhas em relação ao (HDF) revela uma probabilidade de aproximadamente 100% em máquinas com HDF.
+
+
+<p align="center">
+<img src = "machinefailure/8.png" alt="8">
+</p>
+
+
+Figura 8 
+
+
+O Barplot da taxa de falhas em relação ao (PWF) revela uma probabilidade de aproximadamente 100% em máquinas com PWF.
+
+<p align="center">
+<img src = "machinefailure/9.png" alt="9">
+</p>
+
+
+Figura 8 
+
+
+O Barplot da taxa de falhas em relação ao (OSF) revela uma probabilidade de aproximadamente 100% em máquinas com OSF.
+
+
+
+<p align="center">
+<img src = "machinefailure/10.png" alt="10">
+</p>
+
+O Barplot da taxa de falhas em relação ao (RNF) revela uma probabilidade significativamente maior de falhas em máquinas com RNF, aproximadamente 0,21%, em comparação com 0,17%. Diferentemente das outras variáveis binárias, essa se destaca ao mostrar uma menor influência na ocorrência de falhas, enquantos as outras tem influencia de próximo a 100%.
+
+<p align="center">
+<img src = "machinefailure/11.png" alt="11">
+</p>
+
+Figura 9 
+
+O Barplot da taxa de falhas em relação a (TWF, HDF, PWF, ou OSF) mostra a soma das variáveis binárias para avaliar sua importância nos erros. Nota-se no gráfico que aproximadamente 21% dos erros não estão associados a nenhuma dessas variáveis binárias, enquanto os outros 79% apresentam pelo menos uma dessas variáveis.
+
+<p align="center">
+<img src = "machinefailure/12.png" alt="12">
+</p>
+
+Figura 10
+
+O Barplot da taxa de falhas em relação ao 'Type' revela uma proporção maior de erros em máquinas do tipo L, seguido por máquinas do tipo M e H. Os valores percentuais correspondentes
+são:
+
+* H: 1.38%,
+* L: 1.80%, 
+* M: 1.47%.
+
+<p align="center">
+<img src = "machinefailure/13.png" alt="13">
+</p>
+
+### 4.2.1 Conclusões pela visualização
+
+* Quando TWF, HDF, PWF ou OSF são iguais a 1, a probabilidade de erro é praticamente certa (~100%), com 79% dos casos de falha apresentando pelo menos uma dessas variáveis com valor 1.
+
+* Em apenas 21% dos casos, ocorre erro quando todas as variáveis TWF, HDF, PWF e OSF são iguais a 0.
+
+* Embora RNF não parece ter uma influência tão significativa em comparação com outras variáveis, porém a probabilidade de ocorrência de erro é maior quando RNF é igual a 1.
+
+
+* A análise indica que a temperatura média é mais alta quando ocorre uma falha na máquina.
+
+* A velocidade média é mais baixa em situações de falha na máquina.
+
+* O torque médio é mais alto quando ocorre uma falha na máquina.
+
+* O Tool Wear é mais alto em situações de falha na máquina.
+
+* Ao avaliar os tipos de máquinas, observa-se que as máquinas do tipo L têm a maior probabilidade de falha, com 1,8%, seguidas por máquinas do tipo M com 1,47%, e máquinas do tipo H com 1,38% de chance de ocorrer falhas.
+
+
+## 4.3 Machine Learning
+
+
+Na implementação da etapa de Machine Learning, a escolha do CatBoostClassifier se revelou a opção mais apropriada. Este modelo demonstrou eficiência ao enfrentar a complexidade inerente à diversidade de máquinas presentes no conjunto de dados. Sua capacidade notável de lidar robustamente com essas nuances se destacou, eliminando a necessidade de uma preparação extensiva das colunas antes do treinamento. A versatilidade do CatBoost em trabalhar diretamente com as características distintas das máquinas mostrou-se uma vantagem significativa, contribuindo para a eficácia global do modelo.
+
+Na análise inicial, explorei a importância do 'Product Id' nas falhas das máquinas. Ao criar um algoritmo específico, observei que as máquinas com 10% ou mais de chance de problemas foram responsáveis por 48.7% dos casos. Isso indica uma recorrência significativa de problemas em máquinas específicas, destacando a extrema importância do 'Product Id' na ocorrência de falhas no conjunto de dados. Com a presença de 10.000 'Product Ids' diferentes, optei por não criar uma coluna separada para cada variável devido à sua natureza categórica não ordinal. A escolha do CatBoost levou em consideração a capacidade do modelo de lidar eficientemente com essas categorias sem a necessidade de ordenação.
+
+Adicionalmente, para aprimorar o desempenho do modelo, introduzi colunas que representam as máquinas com proporções mais frequentes de erros, abrangendo intervalos de 10% a 60% entre 'Product Id'. Além disso, transformei a variável 'Type' em uma forma ordinal (L = 0, M = 1, H = 2), proporcionando ao modelo uma representação mais coerente das diferentes categorias. Essas estratégias foram adotadas para otimizar a capacidade preditiva do modelo, levando em conta a complexidade e nuances presentes nos dados.
+
+    As Variaveis no dataset tem as respectividade correlação com 'Machine failure'
+    HDF                        0.566309
+    OSF                        0.500060
+    PWF                        0.406044
+    TWF                        0.319621
+    totalerro10plsratio01      0.301261
+    totalerro10plsratio02      0.290215
+    totalerro10plsratio03      0.247147
+    totalerro10plsratio04      0.195357
+    totalerro10plsratio05      0.156436
+    Torque [Nm]                0.150027
+    totalerro10plsratio06      0.112434
+    Air temperature [K]        0.069595
+    Tool wear [min]            0.061215
+    Process temperature [K]    0.031734
+    RNF                        0.001619
+    Type                       0.012176
+    Rotational speed [rpm]     0.057575
+
+
+
+
+
+Primeiramente separei os dados em treino e teste utilizando 
+
+Iniciei o processo dividindo os dados em conjuntos de treino e teste, empregando a biblioteca scikit-learn e a função train_test_split. Ao aplicar o algoritmo CatBoostClassifier, observei um desempenho notavelmente positivo, evidenciado por um recall robusto de 79%, uma precisão de aproximadamente 100%, e um F1 score de 87%. Esses resultados indicam que o modelo consegue discernir eficazmente as complexidades intrínsecas do conjunto de dados.
+
+Posteriormente, direcionei minha atenção para a avaliação da importância das características. Como antecipei, identifiquei que o 'Product Id' desempenha um papel fundamental na modelagem, destacando-se como uma variável de alta relevância na predição de falhas nas máquinas. Essa observação confirma a influência significativa que o tipo específico de produto exerce sobre as ocorrências de falhas, fortalecendo ainda mais a robustez do modelo desenvolvido.
+
+
+
+<p align="center">
+<img src = "machinefailure/14.png" alt="14">
+</p>
+
+
+Posteriormente, conduzi uma análise ao remover as características com base em sua ordem de menor importância no modelo. Intrigantemente, observei que até a retirada da sétima feature, não houve alterações percentuais ou significativas no desempenho do modelo. Este insight sugere que as sete características menos importantes não contribuem de maneira expressiva para a capacidade preditiva do modelo, consolidando a compreensão da relevância destacada das características mais proeminentes.
+
+Essa análise reforça a robustez do modelo, indicando que a remoção das features menos importantes não compromete substancialmente sua eficácia. Esses resultados fornecem uma visão valiosa sobre quais características têm um impacto mais pronunciado na capacidade de predição do modelo, permitindo uma abordagem mais eficiente para simplificação e otimização.
+
+
+
+<p align="center">
+<img src = "machinefailure/15.png" alt="15">
+</p>
+
+
+A linha vertical denominada 'Limiar de Importância' desempenha um papel crucial na divisão entre as variáveis mais e menos impactantes na capacidade preditiva do modelo em relação à 'Machine Failure'. À esquerda desse limiar, encontram-se as variáveis de extrema importância, cuja remoção resultaria em uma redução significativa na habilidade do modelo prever falhas nas máquinas. Por outro lado, à direita, estão as variáveis que podem ser omitidas sem uma perda expressiva da capacidade informativa original do conjunto de dados. Nesse contexto, identificamos 'Type' e 'RNF' como candidatas viáveis para exclusão, uma vez que sua contribuição não é tão crucial para a predição de falhas quanto as variáveis do lado oposto do limiar. Essa análise destaca oportunidades potenciais de simplificação do modelo, preservando sua eficácia fundamental na detecção de falhas nas máquinas.
+
+
+
+
+<p align="center">
+<img src = "machinefailure/16.png" alt="16">
+</p>
+
+
+
+Posteriormente, executei o treinamento do modelo empregando o conjunto completo de dados e o submeti ao Kaggle. De maneira surpreendente, mesmo com uma abordagem simplificada que se baseou exclusivamente no algoritmo CatBoostClassifier, obtive uma posição notável, figurando entre os 2% primeiros colocados no site. Esse desempenho destacado não apenas ressalta a eficácia do modelo, mas também evidencia a habilidade em extrair insights valiosos e desenvolver soluções competitivas por meio de uma abordagem estratégica e focada.
+
+
+
+## 4.4 Conclusão Machine Learning
+
+A aplicação bem-sucedida do modelo CatBoostClassifier resultou na criação de um modelo eficaz para vários 'Product Ids', destacando-se por seu treinamento rápido, implementação descomplicada e desempenho competitivo, situando-se entre os 2% primeiros do site.
+
+Além disso, foi observado que algumas variáveis no conjunto de dados, como 'RNF' e 'Type', não desempenham um papel crucial no treinamento do modelo. Destaca-se, contudo, a extrema importância da variável 'Product Id' para o modelo, sendo fundamental para suas previsões. Adicionalmente, o modelo demonstra uma boa capacidade de identificar máquinas com problemas, evidenciado pelo elevado recall de 79%. Esses insights contribuem para uma compreensão mais aprofundada do impacto das variáveis e da eficácia geral do modelo na identificação de falhas em máquinas. 
+
+Para atingir o topo da competição, seria necessário explorar a utilização de diversos algoritmos além do CatBoost, ajustar os parâmetros das funções e possivelmente adotar abordagens como Hard Voting ou Soft Voting para criar um modelo mais robusto e preciso, mesmo que isso demandasse um tempo mais longo de treinamento. A criação de novas variáveis, derivadas das existentes, poderia facilitar ainda mais o treinamento do conjunto de dados. Além disso, um melhor balanceamento dos dados, especialmente em relação às máquinas com falhas, e a realização de treinamento e ajuste de parâmetros por meio de validações cruzadas também poderiam aprimorar o modelo. Mesmo sem todos esses recursos, foi possível desenvolver um modelo notável em pouco tempo de treinamento.
+
 
 
 
