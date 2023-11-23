@@ -1,3 +1,15 @@
+# Meus Projetos de Ciência de Dados
+
+Bem-vindo ao meu repositório! Aqui estão alguns dos projetos que eu desenvolvi para demonstrar e aprimorar meu conhecimento em ciência de dados e machine learning, utilizando diversas ferramentas e bibliotecas em Python, como numpy, matplotlib, pandas, sklearn e seaborn. Além disso, demonstrei meu conhecimento na ferramenta de análise e visualização de dados, o POWER BI.
+
+
+## Índice
+- [Projeto 1: Student_Perfomance Kaggle](#1-projeto-student_perfomance-kaggle)
+- [Projeto 2: Cardiovascular Diseases Risk Prediction Dataset](#2-projeto-cardiovascular-diseases-risk-prediction-dataset)
+- [Projeto 3: Kaggle Data Science Salary 2021 - 2023](#3-kaggle-data-science-salary-2021---2023)
+- [Projeto 4: Playground Series - Season 3, Episode 17](#projeto-4-playground-series---season-3-episode-17)
+
+
 # 1.Projeto Student_Perfomance Kaggle
 
 ## 1.1 Introdução
