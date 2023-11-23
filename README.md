@@ -1,5 +1,3 @@
-
-
 # 1.Projeto Student_Perfomance Kaggle
 
 ## 1.1 Introdução
@@ -919,9 +917,8 @@ Na visualização, foi constatado que, conforme a **experiência aumenta**, o **
 Quanto aos tipos de contratação mais vantajosos, destaca-se que estão nos funcionários que trabalham em regime **Full-Time e Freelancer, devido ao maior salário médio.** Contudo, com base nos dados, percebe-se que o regime **Full-Time é mais vantajoso**,especialmente em empresas de **porte médio, onde a concentração de empregos no dataset é mais significativa**, resultando em **salários mais atrativos e uma quantidade maior de oportunidades**.
 
 
-
-# Projeto 4
-
+# Projeto 4 Playground Series - Season 3, Episode 17
+Projeto 4 pode ser encontrado o dataset no kaggle no site [Kaggle](https://www.kaggle.com/competitions/playground-series-s3e17/data)
 
 ## 4.1 Introdução
 
