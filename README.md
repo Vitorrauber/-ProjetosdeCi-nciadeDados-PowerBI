@@ -713,3 +713,216 @@ Todos os modelos testados apresentaram resultados bastante semelhantes quando ap
 
 Aplicação de técnicas de engenharia de features pode potencialmente aprimorar o desempenho do modelo. Da mesma forma, considerar a utilização de modelos mais complexos pode ser uma estratégia eficaz para otimizar o desempenho do modelo.
 
+
+
+
+
+# 3 Kaggle Data Science Salary 2021 - 2023 
+
+## 3.1 Introdução
+
+Este projeto aborda o conjunto de dados disponível no [Kaggle](https://www.kaggle.com/datasets/harishkumardatalab/data-science-salary-2021-to-2023), intitulado "Data Science Salary 2021 to 2023". O objetivo principal é esclarecer as tendências salariais na área de Ciência de Dados para os anos de 2021 a 2023. Com foco em vários aspectos do emprego, incluindo experiência profissional, cargos e localização da empresa, este conjunto de dados fornece informações valiosas sobre as distribuições salariais dentro da indústria
+
+
+O dataset é constituido de 8 colunas/variaveis e 3761 linhas/empregados
+
+as colunas do dataset são: 
+- work_year: 2020, 2021, 2022, 2023
+- experience_level: EN (Entry-Level), EX (Experienced), MI (Mid-Level), SE (Senior)
+- employment_type: FT(Full-Time), 'CT'(Contractor), FL(Freelancer), PT:(Part-Time)
+- job_title
+- salary	
+- salary_currency
+- salary_in_usd
+- company_location
+- company_size: L(Large), M(Medium), S(Small)
+
+
+O propósito deste projeto é concentrar-se na visualização desses dados para proporcionar uma compreensão mais aprofundada da área e suas tendências. Será utilizada a linguagem de programação Python, juntamente com as bibliotecas Seaborn, Pandas, Matplotlib e Numpy, a fim de realizar análises visuais significativas e apresentar de forma clara as nuances e padrões presentes nos dados relacionados à Ciência de Dados, Além disso, será empregado o Power BI para demonstrar minha proficiência com essa ferramenta. Isso permitirá a criação de visualizações dinâmicas e interativas, proporcionando uma abordagem abrangente na apresentação das descobertas e insights derivados do conjunto de dados de Ciência de Dados. A integração do Power BI complementará a análise realizada com Python.
+
+## 3.2 Código 
+
+1. Inicialmente, visualizei o dataset utilizando a biblioteca do Pandas e realizei um teste para verificar a existência de valores nulos no conjunto de dados.
+2. Em seguida, efetuei a troca dos valores abreviados das variáveis por seus nomes em extenso, visando aprimorar a visualização dos gráficos.
+
+O código em si é relativamente simples, pois não foi necessário realizar mudanças significativas no dataset. As partes mais complexas do código envolvem a plotagem das visualizações utilizando as bibliotecas Seaborn, Pandas, Matplotlib e Numpy em conjunto.
+
+## 3.3 Visualização e Breve Explicação de Cada Gráfico
+- Figura 1
+
+O gráfico salarial médio em dólares foi plotado com base na localização das empresas, e foi organizado para proporcionar uma visualização mais clara. Observa-se que os países com os salários médios mais elevados são Israel (IL), Porto Rico (PR), Estados Unidos (US), Russia (RU) e Canadá (CA).
+
+<img src = "salary/1.png" alt="1">
+
+- Figura 2 
+
+A plotagem do gráfico com a contagem de funcionários no conjunto de dados, categorizada pela localização das empresas, foi realizada com uma ordenação estratégica para facilitar a visualização. Destaca-se que os países com os salários médios mais elevados também concentram a maior parte dos dados. Nota-se que, em particular, os Estados Unidos (US) apresentam uma significativa predominância, com 3045 dados, representando aproximadamente 81% do conjunto de dados.
+
+<img src = "salary/2.png" alt="2">
+
+
+- Figura 3 
+
+Um barplot foi feito para mostrar a relação entre o salário médio em dólares e os diferentes empregos.
+<img src = "salary/3.png" alt="3">
+
+- Figura 4
+
+O gráfico do salário médio foi plotado em relação ao nível de experiência, e observa-se que os resultados seguem a expectativa: à medida que o nível de experiência aumenta, o salário do funcionário também tende a aumentar.
+
+<img src = "salary/4.png" alt="4">
+
+- Figura 5
+
+O gráfico do salário médio foi plotado ao longo dos anos, e nota-se um aumento progressivo nos salários dos funcionários dessa área com o decorrer do tempo.
+<img src = "salary/5.png" alt="5">
+
+- Figura 6
+
+O barplot do salário médio ao longo dos anos revela um aumento progressivo nos salários dos funcionários do conjunto de dados com o passar do tempo.
+<img src = "salary/6.png" alt="6">
+
+- Figura 7
+
+Foi feito a plotagem do salario médio pelo tamanho da companhia pode ser visto que as companias com médias são as que apresentam maior salario médio, seguidos pelas grande e as que apresentem o menor salário médio são as pequenas.
+<img src = "salary/7.png" alt="7">
+
+- Figura 8 
+
+
+O boxplot do salário em dólar, categorizado pelo tamanho da empresa e separado pelo nível de experiência, foi criado para proporcionar uma compreensão mais profunda dos dados. De modo geral, as empresas seguem a mesma ordem salarial por nível de experiência, com a sequência: experienced > senior > mid-level > entry level. No entanto, destaca-se um salário médio mais elevado para funcionários de nível médio e experientes em empresas de tamanho médio.
+
+<img src = "salary/8.png" alt="8">
+
+- Figura 9 
+
+O boxplot do salário em dólar, categorizado pelo tamanho da empresa e separado pelo tipo de emprego, foi elaborado. Nesse gráfico, é evidente um salário significativamente alto para aqueles que trabalham como contratados (contractor) em empresas grandes. Além disso, observam-se salários relativamente altos para funcionários em regime integral (full time) em empresas de médio porte.
+
+<img src = "salary/9.png" alt="9">
+
+- Figura 10
+
+O Stacked bar plot do tamanho das empresas em relação ao número de funcionários foi criado. Observa-se que uma parte significativa dos funcionários, mais de 80%, está empregada em empresas de médio porte. Além disso, destaca-se que a maioria desses funcionários é composta por sênior.
+
+
+<img src = "salary/11.png" alt="11">
+
+- Figura 11
+
+O barplot dos top 10 empregos com os maiores salários médios no conjunto de dados.
+
+
+<img src = "salary/12.png" alt="12">
+
+Figura 12
+
+Um stacked bar plot foi criado para representar a distribuição do nível de experiência em relação ao número de funcionários nos top 10 empregos mais bem remunerados. Nota-se que a predominância dessas posições está direcionada a profissionais com nível de experiência sênior.
+
+
+
+<img src = "salary/13.png" alt="13">
+
+Figura 13
+
+O barplot dos 10 empregos com os salários mais elevados foi criado, levando em consideração o número de funcionários no conjunto de dados. Nota-se que os empregos com maior contingente de funcionários são "Applied Scientist" e "Data Science Manager".
+
+<img src = "salary/14.1.png" alt="14">
+
+- Figura 14
+
+Um stacked barplot da contagem de funcionários, categorizado pelo tamanho da empresa, foi elaborado. Observa-se que a maioria dos funcionários está distribuída em empresas de porte médio e grande. Notavelmente, os dois empregos com o maior número de funcionários entre os top 10: "Data Science Manager" estão predominantemente em empresas de porte médio, enquanto os "Applied Scientists" estão em sua maioria em empresas de grande porte.
+
+<img src = "salary/14.png" alt="15">
+
+- Figura 15
+
+
+O bar plot dos top 10 países com os maiores salários médios em dólar foi criado. Observa-se que Israel (IL) lidera o ranking, seguido por Porto Rico (PR), Estados Unidos (US), Russia (RU) e Canadá (CA).
+
+
+<img src = "salary/15.png" alt="16 ">
+
+- Figura 16
+
+
+O barplot dos 10 serviços com maior número de empregados no conjunto de dados.
+
+
+<img src = "salary/16.png" alt="17 ">
+
+- Figura 17
+
+
+O gráfico de pizza do top 10 serviços com maior número de empregados no conjunto de dados.
+
+<img src = "salary/19.png" alt="20 ">
+
+- Figura 18
+
+
+Foi criado um gráfico de barras empilhadas (stacked barplot) com os empregos que possuem mais funcionários, classificados pelo tamanho da empresa. Nota-se que a maioria desses empregos está concentrada em companhias de porte médio.
+
+<img src = "salary/20.png" alt="21 ">
+
+- Figura 19
+
+
+Foi elaborado um gráfico de barras empilhadas com os empregos que possuem mais funcionários, categorizados pelo nível de experiência. Observa-se que a maior parte desses empregos está ocupada por profissionais com nível de experiência sênior.
+
+<img src = "salary/21.png" alt="22 ">
+
+
+- Figura 20
+
+O bar plot do salário em relação ao ano, separado por nível de experiência, foi criado. Observa-se um aumento em todos os casos com o passar dos anos, especialmente para os profissionais de 'Entry-Level'.
+
+<img src = "salary/23.png" alt="24 ">
+- Figura 21
+
+
+O bar plot da média salarial em relação ao ano, com a separação pelo tipo de emprego.
+
+Este gráfico é  interessante, pois evidencia um aumento anual consistente nos salários médios dos funcionários em regime integral (full-time). Destaca-se um aumento acentuado em 2021 para os funcionários contratados (contractors), seguido por uma redução gradual em seus salários nos anos subsequentes. Os salários de freelancers parecem oscilar consideravelmente a cada ano. Por outro lado, os salários de profissionais em regime de meio período (Part-Time) permaneceram praticamente constantes ao longo dos anos, com uma notável exceção em 2022, que apresentou um grande aumento, retornando ao patamar habitual em 2023.
+
+<img src = "salary/24.png" alt="25">
+
+
+
+
+
+
+
+
+
+## 3.4 POWER BI
+
+
+Apresento um GIF elaborado no Power BI, utilizando um dataset específico, como uma forma de demonstrar minha habilidade e proficiência nesta ferramenta.
+<p align="center">
+<img src = "salary/gif2.gif" alt="GIF POWER BI">
+</p>
+
+
+## 3.5 Conclusão
+
+Este dataset revela-se interessante para análises de visualização, especialmente quando aplicado no **Power BI**, devido às variáveis de localização. No entanto, trata-se de um conjunto de dados com poucos valores (empregados) em relação à abundância de empregos.
+
+Com a visualização, é possível observar que países como **Israel, Estados Unidos e Porto Rico** apresentam os **maiores salários médios** na área. No entanto, excluindo os **Estados Unidos, que compreende aproximadamente 81%** do dataset, esses países possuem poucos empregados, o que pode resultar em valores não condizentes com a realidade ou média da população. **Essas proporções também não refletem precisamente a distribuição real**.
+
+Na visualização, nota-se que os empregos mais bem remunerados são pouco frequentes, sendo **"Applied Scientist"** e **"Data Science Manager"** os mais recorrentes. Isso torna essas **profissões mais interessantes** devido ao **maior número de empregados** e aos **ótimos salários**, estando entre as **top 10 profissões com maior número de empregados** e empatadas no **top 8-9.**
+
+O dataset também revela que **boa parte dos dados** refere-se a funcionários com **nível de experiência sênior**, o que eleva a média salarial. Além disso, a **maioria dos funcionários está associada a empresas de porte médio, representando cerca de 80% do datase**.
+
+Na visualização, foi constatado que, conforme a **experiência aumenta**, o **salário do funcionário aumenta**, o que é esperado. **Há também um aumento médio nos salários dos trabalhadores dessa área ao longo dos anos.**
+
+
+Quanto aos tipos de contratação mais vantajosos, destaca-se que estão nos funcionários que trabalham em regime **Full-Time e Freelancer, devido ao maior salário médio.** Contudo, com base nos dados, percebe-se que o regime **Full-Time é mais vantajoso**,especialmente em empresas de **porte médio, onde a concentração de empregos no dataset é mais significativa**, resultando em **salários mais atrativos e uma quantidade maior de oportunidades**.
+
+
+
+
+
+
+
+
+
